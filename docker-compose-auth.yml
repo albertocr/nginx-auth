@@ -1,0 +1,14 @@
+version: '2.1'
+
+networks:
+  nginx-net:
+
+services:
+  nginx-proxy:
+    image: nginx
+    volumes:
+      - ./nginx-auth.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8081:80"
+    networks:
+      - nginx-net

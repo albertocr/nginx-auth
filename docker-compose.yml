@@ -1,0 +1,16 @@
+version: '2.1'
+
+networks:
+  nginx-net:
+
+services:
+  nginx-web:
+    image: nginx
+    volumes:
+      - ./data/www:/usr/share/nginx/html
+      - ./data/images:/data/images
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:80"
+    networks:
+      - nginx-net
