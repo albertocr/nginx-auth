@@ -8,6 +8,7 @@ services:
     image: nginx
     volumes:
       - ./nginx-auth.conf:/etc/nginx/nginx.conf
+      - ./data/.htpasswd:/data/.htpasswd
     ports:
       - "8081:80"
     networks:
